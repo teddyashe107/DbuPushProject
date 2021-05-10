@@ -19,5 +19,17 @@
             </div>
         </div>
     </div>
+
+    <div class="row justify-content-center"> 
+        <div class="col-md-7 mt-5"> 
+            <div class="jumbotron">
+             <h1 class="bg-success"> Hello colleges this is our starting of  DbuPush Project
+           
+            </div>
+        
+        
+        </div>
+    
+    </div>
 </div>
 @endsection
