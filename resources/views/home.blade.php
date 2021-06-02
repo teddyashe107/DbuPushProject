@@ -23,12 +23,32 @@
     <div class="row justify-content-center"> 
         <div class="col-md-7 mt-5"> 
             <div class="jumbotron">
-             <h1 class="bg-success"> Hello colleges this is our starting of  DbuPush Project
+           
+           
+                    <h1 class="text-center text-danger">Debrebirhan University</h1>
+                    <h2>Lists of students working with DpuPush Backend</p>
+                        <ul class="text-primary">
+                            <li>Teddy Code Night</li>
+                            <li>Fikir</li>
+                            <li>Yared</li>
+                            <li>Yonas</li>
+                            <li>Yosef</li>
+                            <li>Million</li>
+                            <li>Sami</li>
+                            <li>Nati</li>
+                            <li>Yohanna</li>
+                            <li>Deva</li>
+                            <li>Tema</li>
+                            <li>Yalew</li>
+                            <li>Mame</li>
+                        </ul>
+                
+             
            
             </div>
         
         
-        </div>
+   
     
     </div>
 </div>

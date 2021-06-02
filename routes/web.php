@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,9 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('auth.register');
 });
 
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/about',[App\Http\Controllers\HomeController::class, 'about']);
+Route::get('/layout',[App\Http\Controllers\StudentController::class,'index']);
+Route::get('/registration',[App\Http\Controllers\HomeController::class, 'register']);
+Route::post('/forms',[App\Http\Controllers\StudentController::class, 'store']);
+Route::get('/forms/create',[App\Http\Controllers\StudentController::class,'create']);
