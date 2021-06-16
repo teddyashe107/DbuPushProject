@@ -3,6 +3,7 @@
 use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,7 +21,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-Route::resource('user', [ApiController::class]);
+//Route::resource('user', [ApiController::class]);
 
-//Route::get('data',  [ApiController::class, 'index']);
-//Route::post('store',[ApiController::class, 'store']);
+Route::get('/login',  [UserController::class, 'login']);
+Route::post('/register',[UserController::class, 'store']);
+Route::get('/student',  [UserController::class, 'index']);

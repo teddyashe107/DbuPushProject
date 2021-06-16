@@ -33,6 +33,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
+                        <li class="active nav-item"><a class="nav-link" href="index.html">{{ __('Home') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#about">{{ __('About us') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">{{ __('Services') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">{{ __('Portfolio') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#team">{{ __('Team') }}</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">{{ __('Contact us') }}</a></li>
 
                     </ul>
 
