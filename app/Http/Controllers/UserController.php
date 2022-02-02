@@ -2,53 +2,55 @@
 
 namespace App\Http\Controllers;
 
-
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Auth;
+
 use App\Models\User;
-use Exception;
-use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-    public function store(Request $request)
+    /**
+     * Display a listing of the resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function index()
     {
-         $validatedData = $request->validate([
-             'name'=>'required|max:55',
-             'email'=>'email|required|unique:users',
-             'password'=>'required|confirmed'
-         ]);
- 
-         $validatedData['password'] = bcrypt($request->password);
- 
-         $user = User::create($validatedData);
- 
-         $accessToken = $user->createToken('authToken')->accessToken;
- 
-         return response(['user'=> $user, 'access_token'=> $accessToken]);
-        
+        return  User::all();
     }
- 
- 
-    public function login(Request $request)
-    {
-         $loginData = $request->validate([
-             'email' => 'email|required',
-             'password' => 'required'
-         ]);
-        
-         if(!auth()->attempt($loginData)) {
-             return response(['message'=>'Invalid credentials']);
-         }
- 
-         $accessToken = auth()->user()->createToken('authToken')->accessToken;
- 
-         return response(['user' => auth()->user(), 'access_token' => $accessToken]);
- 
-    }
-   
 
-   public function index(){
-       return User::all();
-   }
+    /**
+     * Display the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function show($id)
+    {
+        return User::find($id);
+    }
+
+    /**
+     * Update the specified resource in storage.
+     *
+     * @param  \Illuminate\Http\Request  $request
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function update(Request $request, $id)
+    {
+        $user = User::find($id);
+        $user->update($request->all());
+        return $user;
+    }
+
+    /**
+     * Remove the specified resource from storage.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function destroy($id)
+    {
+        return User::destroy($id);
+    }
 }

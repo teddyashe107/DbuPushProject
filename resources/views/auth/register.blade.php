@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card mt-5 bg-dark text-light">
                 <div class="card-header">{{ __('Register') }}</div>
 
                 <div class="card-body">
@@ -72,7 +72,7 @@
                                </button>
                               
                                @if (Route::has('login'))
-                               <a class="btn btn-link" href="{{ route('login') }}">
+                               <a class="btn btn-link text-light" href="{{ route('login') }}">
                                    {{ __('Already Registerd!') }}
                                </a>
                            @endif

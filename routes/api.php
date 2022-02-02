@@ -4,6 +4,9 @@ use App\Http\Controllers\ApiController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\BlogController;
+use App\Http\Controllers\LoginController;
+use App\Http\Controllers\RegisterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,8 +24,32 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 });
 
 
-//Route::resource('user', [ApiController::class]);
 
-Route::get('/login',  [UserController::class, 'login']);
-Route::post('/register',[UserController::class, 'store']);
-Route::get('/student',  [UserController::class, 'index']);
+Route::post('/login',  [LoginController::class, 'login']);
+Route::post('/register',[RegisterController::class, 'register']);
+Route::get('user',  [UserController::class, 'index']);
+Route::get('user/{$id}',[UserController::class,'show']);
+Route::delete('delete',[UserController::class,'destroy']);
+Route::put('user/{$id}',[UserController::class,'update']);
+Route::middleware('auth:api')->get('/student',  [UserController::class, 'index']);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//Route::get('users', [UserController::class, 'users']);

@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <div class="card">
+            <div class="card mt-5 bg-dark text-light">
                 <div class="card-header">{{ __('Login') }}</div>
 
                 <div class="card-body">
@@ -61,6 +61,11 @@
                                     <a class="btn btn-link" href="{{ route('password.request') }}">
                                         {{ __('Forgot Your Password?') }}
                                     </a>
+                                @endif
+
+                                @if (Route::has('register'))
+                                <a class="btn-btn-link text-light" href="{{ route('register') }}">Sign Up</a>
+                                    
                                 @endif
                             </div>
                         </div>

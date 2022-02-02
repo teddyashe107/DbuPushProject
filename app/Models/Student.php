@@ -11,5 +11,13 @@ class Student extends Model
 {
     use HasFactory;
 
+    protected $fillabel = [
+        'fname',
+        'lname',
+        'department',
+        'image_path',
+
+    ];
+
 
 }

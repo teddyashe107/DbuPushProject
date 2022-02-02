@@ -1,18 +1,20 @@
-@extends('contents.layout');
-@include('layouts.app')
+@include('layouts.navbar')
+@extends('layouts.app');
+
 
 
 @section('content')
   <div class="container">
     <div class="row justify-content-center">
       <div class="col-md-8">
-              <div class="card justify-content-center">
-                    <div class="card-header">{{ __('Register') }}</div>  
+              <div class="card text-center bg-dark text-light p-5">
+                    <div class="card-header">{{ __('Register For Courses') }}</div>  
 
                     <div class="card-body">
 
                  
-                          <form method="POST" action="/forms" >
+                          <form method="POST" action="/store" enctype="multipart/form-data" >
+                            <input type="file" name="image" class="form-control p-1">
                               @csrf
   
                              <div class="form-group">

@@ -10,7 +10,7 @@ class StudentController extends Controller
 {
     //
     public function index(){
-        return view('contents.index');
+        return view('home');
     }
 
     public function create(){
@@ -20,17 +20,26 @@ class StudentController extends Controller
     public function store(Request $request){
         // form validiation
         $validated = $request->validate([
-
+            'image' => ['required','mimes:png,jpg','max:5048'],
             'fname' => 'required',
             'lname' => 'required',
             'department' => 'required'
 
         ]);
+
+        $newImageName = time(). '-'.$request->fname.'.'.$request->image->extension();
+ 
+        $request->image->move(public_path('images'), $newImageName);
+
+     
         // create a new post using the request data
+
+
        $stud = new Student();
        $stud->fname = request('fname');
        $stud->lname =  request('lname'); 
        $stud->department = request('department');
+       $stud->image_path = $newImageName;
        
 
        // save it to the database
@@ -38,8 +47,9 @@ class StudentController extends Controller
 
        // redirect to the homepage
           
-       return redirect('/');
+       return redirect('/layout');
 
     }
+    
 
 }
